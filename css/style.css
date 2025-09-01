@@ -1,0 +1,208 @@
+/* Estilos Generales */
+*{
+    font-family: "Oswald", sans-serif;
+}
+ul{
+    list-style: none;
+}
+
+.ul-navbar {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   
+ }
+
+.ul-navbar li a {
+    color: #000;
+    text-decoration: none;
+
+}
+
+
+
+.texto-azul {
+    color: rgb(13, 43, 141);
+}
+
+.texto-titulo {
+    color: #ffffff;
+}
+.centrar-texto {
+    text-align: center;
+}
+
+/* Header */
+.index-header {
+    background-image: url(../img/Glaciar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+
+}
+
+
+.header-contenedor-superior{
+ display: flex ;
+ align-items: center;
+ justify-content: space-between;
+ padding: 1rem;
+ width: 95%;
+
+ position: fixed;
+ top: 0;
+}
+
+.header-contenedor-inferior{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  height: 100vh;
+  width: 60%;          
+  margin: 0 auto;
+
+}
+
+.logotipo {
+    width: 6rem;
+}
+
+.imagen-lobo {
+  display: block;
+  margin: 20px auto;
+  width: 150px;  /* Ajusta el tamaño de la imagen según lo necesites */
+  height: auto; /* Mantiene la proporción de la imagen */
+  
+}
+.index-h1 {
+    font-size: 6rem;
+    padding: 6rem;
+}
+
+/* Main */
+
+.cards-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.producto {
+    text-align: center;
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    background-color: #f9f9f9; 
+    width: 100%;
+}
+
+.box-shadow {
+    box-shadow: 8px 8px 8px #007bff98;
+}
+
+.producto h3 {
+    margin-bottom: 10px; 
+}
+
+.producto p {
+    margin-bottom: 20px;
+}
+
+.producto button {
+    padding: 10px 20px; 
+    background-color: #007BFF;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: #0056b3;
+}
+
+
+.producto:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
+}
+
+.ul-navbar li a:hover {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    text-align: center; 
+}
+
+ul li {
+    display: inline-block; 
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+a
+/*clientes*/ 
+
+.clientes-cards {
+    background-color: #f1f1f1; 
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clientes-cards blockquote {
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 600px; 
+    padding: 10px;
+    background-color: #fff; 
+    border-left: 5px solid #007BFF;
+    font-size: 18px; 
+    color: #333; 
+}
+
+.clientes-cards img {
+    display: block; 
+    margin: 20px auto;
+    max-width: 150px; 
+    height: auto;
+}
+
+
+/* Footer */
+footer {
+ 
+ height: 15rem;
+
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.logotipo-footer {
+    width: 5rem;
+    object-fit: cover;
+    
+}
+
+.redes-sociales {
+    text-align: center; 
+}
+
+.logotipo-footer {
+    width: 50px;
+    height: auto;
+    margin: 0 10px; 
+}
