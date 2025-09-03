@@ -1,15 +1,49 @@
-@charset "UTF-8";
-.clientes-cards, .producto {
+//Variables
+$colorBlanco: #fff;
+$ColorAmarillo: #ffeb3b;
+$ColorAzul: rgb(13, 43, 141);
+
+//Extends
+%card-base {
   border-radius: 10px;
   text-align: center;
-  background-color: #fff;
+  background-color: $colorBlanco;
 }
-
-.empresas-logo1:hover, .empresas-logo:hover {
+%hover-scale {
   transform: scale(1.1);
 }
+//Mixins
 
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $breakpoint == mobile {
+    @media (max-width: 480px) { @content; }
+  }
+}
+
+@mixin flex-center($justify: center, $align: center, $direction: row ) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin box-shadow($x: 0, $y: 4px, $blur: 8px, $color: rgba(0,0,0,0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin button($bg, $color) {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: $bg;
+  color: $color;
+}
 /* Estilos Generales */
+
 * {
   font-family: "Oswald", sans-serif;
 }
@@ -46,12 +80,12 @@ ul li {
 }
 
 .ul-navbar li a::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 2px;
   display: block;
-  background: #ffeb3b;
+  background: $ColorAmarillo;
   transition: width 0.3s;
   bottom: -5px;
   left: 0;
@@ -62,26 +96,24 @@ ul li {
 }
 
 .ul-navbar li a:hover {
-  color: #ffeb3b;
+  color: $ColorAmarillo;
 }
 
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+  @include flex-center(space-between, center);
 }
 
+
 .texto-azul {
-  color: rgb(13, 43, 141);
+  color: $ColorAzul;
 }
 
 .texto-titulo {
-  color: #fff;
+  color: $colorBlanco;
 }
 
 .texto-gris {
-  color: #5f5f5f;
+    color: #5f5f5f;
 }
 
 .centrar-texto {
@@ -95,26 +127,22 @@ ul li {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  color: #fff;
+  color: $colorBlanco;
 }
 
 .header-contenedor-superior {
   padding: 1rem 2rem;
   top: 0;
   left: 0;
-  width: 100%;
+  width:100%;
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
 
 .header-contenedor-inferior {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include flex-center(center, center, column);
   margin: 6rem;
 }
-
 .logotipo {
   width: 60px;
   height: auto;
@@ -131,7 +159,7 @@ ul li {
 
 .index-h1 {
   font-size: 7rem;
-  background-color: rgb(13, 43, 141);
+  background-color: $ColorAzul;
   border-radius: 1rem;
 }
 
@@ -149,13 +177,14 @@ ul li {
 }
 
 .producto {
+  @extend %card-base;
   padding: 10px;
   border: 1px solid #ddd;
   width: 100%;
 }
 
 .box-shadow {
-  box-shadow: 8px 8px 8px rgb(13, 43, 141);
+  box-shadow: 8px 8px 8px $ColorAzul;
 }
 
 .producto h3 {
@@ -167,29 +196,24 @@ ul li {
 }
 
 .producto button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: rgb(13, 43, 141);
-  color: #fff;
+  @include button($ColorAzul, $colorBlanco);
 }
-
 .producto button:hover {
-  background-color: rgb(13, 43, 141);
+  background-color: $ColorAzul;
 }
 
 .producto:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease;
-  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
+  @include box-shadow(0, 8px, 16px, rgba(0,123,255,0.2));
 }
 
 /* Clientes */
 .clientes-cards {
+  @extend %card-base;
   background-color: #f1f1f1;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @include box-shadow(0, 4px, 8px, rgba(0,0,0,0.1));
   max-width: 800px;
   margin: 0 auto;
 }
@@ -200,7 +224,7 @@ ul li {
   max-width: 600px;
   padding: 10px;
   background-color: #fff;
-  border-left: 5px solid rgb(13, 43, 141);
+  border-left: 5px solid $ColorAzul;
   font-size: 18px;
   color: #333;
 }
@@ -227,6 +251,13 @@ ul li {
   margin: 1rem;
 }
 
+.empresas-logo:hover {
+  @extend %hover-scale;
+}
+
+.empresas-logo1:hover {
+  @extend %hover-scale;
+}
 /* Footer */
 footer {
   height: 15rem;
@@ -243,47 +274,42 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) and (max-width: 768px) {
-  .index-h1 {
-    font-size: 3rem;
-    padding: 1rem;
-  }
-  .parrafo-h1 {
-    font-size: 1.2rem;
-  }
-}
+
+
 @media (max-width: 768px) {
+@include responsive(tablet) {
+  .index-h1 { font-size: 3rem; padding: 1rem; }
+  .parrafo-h1 { font-size: 1.2rem; }
+}
+
   .header-contenedor-inferior {
     width: 90%;
   }
+
   .ul-navbar {
-    flex-wrap: wrap;
+    flex-wrap: wrap;  
     justify-content: center;
     gap: 1rem;
   }
+
   .ul-navbar li {
     margin: 5px 0;
   }
 }
+
 /* Ajustes extra para móviles chicos */
 @media (max-width: 480px) {
   .index-header {
-    height: auto;
+    height: auto; 
     padding: 4rem 1rem;
   }
+
+ @include responsive(mobile) {
+  .index-h1 { font-size: 2.2rem; }
+  .parrafo-h1 { font-size: 1rem; }
 }
-@media (max-width: 480px) and (max-width: 480px) {
-  .index-h1 {
-    font-size: 2.2rem;
-  }
-  .parrafo-h1 {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 480px) {
+
   .logotipo {
     width: 45px;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
