@@ -1,0 +1,9 @@
+//Extends
+%card-base {
+  border-radius: 10px;
+  text-align: center;
+  background-color: $colorBlanco;
+}
+%hover-scale {
+  transform: scale(1.1);
+}

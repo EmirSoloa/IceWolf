@@ -1,0 +1,22 @@
+/* Empresas */
+.empresas-logo {
+  height: 10rem;
+  gap: 2rem;
+}
+
+.empresas-logo1 {
+  height: 7rem;
+  gap: 2rem;
+}
+
+.empresas-container {
+  margin: 1rem;
+}
+
+.empresas-logo:hover {
+  @extend %hover-scale;
+}
+
+.empresas-logo1:hover {
+  @extend %hover-scale;
+}

@@ -1,0 +1,87 @@
+/* Header */
+.index-header {
+  background-image: url(../img/Glaciar.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: $colorBlanco;
+}
+
+.header-contenedor-superior {
+  padding: 1rem 2rem;
+  top: 0;
+  left: 0;
+  width:100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.header-contenedor-inferior {
+  @include flex-center(center, center, column);
+  margin: 6rem;
+}
+.logotipo {
+  width: 60px;
+  height: auto;
+}
+
+.logo-link {
+  display: inline-block;
+  padding: 5px;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.index-h1 {
+  font-size: 7rem;
+  background-color: $ColorAzul;
+  border-radius: 1rem;
+}
+
+.parrafo-h1 {
+  font-size: 2rem;
+}
+
+/* Main */
+.cards-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.producto {
+  @extend %card-base;
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.box-shadow {
+  box-shadow: 8px 8px 8px $ColorAzul;
+}
+
+.producto h3 {
+  margin-bottom: 10px;
+}
+
+.producto p {
+  margin-bottom: 20px;
+}
+
+.producto button {
+  @include button($ColorAzul, $colorBlanco);
+}
+.producto button:hover {
+  background-color: $ColorAzul;
+}
+
+.producto:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+  @include box-shadow(0, 8px, 16px, rgba(0,123,255,0.2));
+}

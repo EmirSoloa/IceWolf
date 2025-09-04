@@ -1,0 +1,37 @@
+@media (max-width: 768px) {
+@include responsive(tablet) {
+  .index-h1 { font-size: 3rem; padding: 1rem; }
+  .parrafo-h1 { font-size: 1.2rem; }
+}
+
+  .header-contenedor-inferior {
+    width: 90%;
+  }
+
+  .ul-navbar {
+    flex-wrap: wrap;  
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .ul-navbar li {
+    margin: 5px 0;
+  }
+}
+
+/* Ajustes extra para móviles chicos */
+@media (max-width: 480px) {
+  .index-header {
+    height: auto; 
+    padding: 4rem 1rem;
+  }
+
+ @include responsive(mobile) {
+  .index-h1 { font-size: 2.2rem; }
+  .parrafo-h1 { font-size: 1rem; }
+}
+
+  .logotipo {
+    width: 45px;
+  }
+}
