@@ -1,0 +1,55 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ul-navbar {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ul-navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.ul-navbar li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  background: $ColorAmarillo;
+  transition: width 0.3s;
+  bottom: -5px;
+  left: 0;
+}
+
+.ul-navbar li a:hover::after {
+  width: 100%;
+}
+
+.ul-navbar li a:hover {
+  color: $ColorAmarillo;
+}
+
+.navbar-container {
+  @include flex-center(space-between, center);
+}
+

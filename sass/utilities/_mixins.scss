@@ -1,15 +1,47 @@
 //Mixins
 
-@mixin responsive($breakpoint) {
-  @if $breakpoint == tablet {
-    @media (max-width: 768px) { @content; }
+@media (max-width: 768px) and (max-width: 768px) {
+  .index-h1 {
+    font-size: 3rem;
+    padding: 1rem;
   }
-  @else if $breakpoint == mobile {
-    @media (max-width: 480px) { @content; }
+  .parrafo-h1 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .header-contenedor-inferior {
+    width: 90%;
+  }
+  .ul-navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .ul-navbar li {
+    margin: 5px 0;
+  }
+@media (max-width: 480px) {
+  .index-header {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+}
+@media (max-width: 480px) and (max-width: 480px) {
+  .index-h1 {
+    font-size: 2.2rem;
+  }
+  .parrafo-h1 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .logotipo {
+    width: 45px;
   }
 }
 
-@mixin flex-center($justify: center, $align: center, $direction: row ) {
+@mixin flex-center($justify: center, $align: center, $direction: row) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
@@ -28,3 +60,4 @@
   background-color: $bg;
   color: $color;
 }
+

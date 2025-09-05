@@ -19,7 +19,7 @@
 
 .header-contenedor-inferior {
   @include flex-center(center, center, column);
-  margin: 6rem;
+
 }
 .logotipo {
   width: 60px;
@@ -43,45 +43,4 @@
 
 .parrafo-h1 {
   font-size: 2rem;
-}
-
-/* Main */
-.cards-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-items: center;
-  gap: 30px;
-  padding: 40px 20px;
-}
-
-.producto {
-  @extend %card-base;
-  padding: 10px;
-  border: 1px solid #ddd;
-  width: 100%;
-}
-
-.box-shadow {
-  box-shadow: 8px 8px 8px $ColorAzul;
-}
-
-.producto h3 {
-  margin-bottom: 10px;
-}
-
-.producto p {
-  margin-bottom: 20px;
-}
-
-.producto button {
-  @include button($ColorAzul, $colorBlanco);
-}
-.producto button:hover {
-  background-color: $ColorAzul;
-}
-
-.producto:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-  @include box-shadow(0, 8px, 16px, rgba(0,123,255,0.2));
 }
