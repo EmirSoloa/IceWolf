@@ -13,20 +13,45 @@
 </head>
 <body>
 <header class="index-header">
-  <div class="navbar-container header-contenedor-superior">
-    <a href="index.html" class="logo-link">
-      <img class="logotipo" src="./img/Logoicewolf.png" alt="Logotipo Ice Wolf">
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+  <div class="container-fluid">
+   
+    <a class="navbar-brand" href="index.html">
+      <img src="./img/Logoicewolf.png" alt="Logotipo Ice Wolf" width="60">
     </a>
 
-    <nav>
-      <ul class="ul-navbar">
-        <li><a href="./pages/Inicio.html">Inicio</a></li>
-        <li><a href="./pages/Servicios.html">Servicios</a></li>
-        <li><a href="./pages/Nosotros.html">Nosotros</a></li>
-        <li><a href="./pages/Contactos.html">Contacto</a></li>
+  
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./pages/Inicio.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/Servicios.html">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/Nosotros.html">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/Contactos.html">Contacto</a>
+        </li>
       </ul>
-    </nav>
+    </div>
   </div>
+</nav>
+
  <section class="header-contenedor-inferior">
      <h1 class="index-h1 centrar-texto texto-titulo">HIELO EN 3DF</h1>
     

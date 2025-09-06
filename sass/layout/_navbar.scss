@@ -21,7 +21,7 @@ ul li {
 }
 
 .ul-navbar li a {
-  color: #fff;
+  color: $colorBlanco;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -47,6 +47,34 @@ ul li {
 
 .ul-navbar li a:hover {
   color: $ColorAmarillo;
+}
+
+.navbar-nav .nav-link {
+  color: $colorBlanco !important;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  background: $ColorAmarillo; 
+  transition: width 0.3s;
+  bottom: -5px;
+  left: 0;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+  color: $ColorAmarillo !important;
 }
 
 .navbar-container {

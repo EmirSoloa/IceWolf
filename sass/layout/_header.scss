@@ -44,3 +44,46 @@
 .parrafo-h1 {
   font-size: 2rem;
 }
+
+/* Checkbox oculto */
+.menu-checkbox {
+  display: none;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none; /* Oculto en escritorio */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: $colorBlanco;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .ul-navbar {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+  }
+
+  /* Cuando el checkbox está activado, mostramos el menú */
+  .menu-checkbox:checked ~ nav .ul-navbar {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block; /* Visible en mobile */
+  }
+
+  .navbar-container {
+    position: relative;
+  }
+}
