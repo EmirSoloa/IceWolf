@@ -12,7 +12,7 @@
 
 <body class="fondo-principal">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="Inicio.html">
                 <img src="../img/Logoicewolf.png" alt="Logo Hielo">
@@ -33,19 +33,69 @@
         </div>
     </nav>
     <main>
-        <h2 class="centrar-texto texto-azul">Sobre Nosotros</h2>
-        <p class="centrar-texto">
-            Ice Wolf nació como un proyecto familiar en Caseros. Nuestra misión es brindar hielo de calidad y atención
-            personalizada...
-        </p>
+        <section class="historia-empresa mt-5 p-4 bg-light rounded">
+  <div class="contenedor">
+    <h2 class="texto-azul centrar-texto">Nuestra Historia</h2>
+    <p class="centrar-texto">
+      Ice Wolf nació como un pequeño proyecto familiar en Caseros, con la idea de ofrecer hielo de calidad y
+      atención personalizada. Desde nuestros inicios, nos enfocamos en mantener la cercanía con nuestros clientes,
+      garantizando productos frescos y confiables.
+    </p>
+    <p class="centrar-texto">
+      Con los años, fuimos creciendo en infraestructura, ampliando nuestra flota de reparto y agregando
+      productos como hielo picado, barras y carbón. Hoy atendemos tanto a comercios como a particulares en
+      todo el partido de Tres de Febrero.
+    </p>
+    <p class="centrar-texto">
+      Gracias a más de 50 años de experiencia, seguimos comprometidos con la calidad, la puntualidad y la
+      confianza, valores que nos distinguen y nos hacen líderes en nuestro rubro.
+    </p>
+  </div>
+</section>
+
+       <div id="carouselHistoria" class="carousel slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../img/Local2013.png" class="d-block w-100" alt="Inicios de Ice Wolf">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Año 2002</h5>
+        <p>Comenzamos como un pequeño emprendimiento familiar en Caseros.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../img/Local2020.png" class="d-block w-100" alt="Crecimiento">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Año 2020</h5>
+        <p>Ampliamos nuestro alcance a todo Tres de Febrero y agregamos nuevos productos.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../img/Local2025.png" class="d-block w-100" alt="Hoy">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Hoy</h5>
+        <p>Somos líderes locales en distribución de hielo, con atención personalizada y calidad garantizada.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselHistoria" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselHistoria" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+
     </main>
 
-    <footer>
-        <p class="centrar-texto texto-azul">Nuestras redes:</p>
+    <footer class="mt-4 bg-dark text-white">
+        <p class="centrar-texto">Nuestras redes:</p>
         <div class="centrar-texto">
-            <a href="#"><img src="../img/LogoFacebook.jpg" alt="facebooklogo" class="logotipo-footer"></a>
-            <a href="#"><img src="../img/Logoinstagram.jpg" alt="instagramlogo" class="logotipo-footer"></a>
-            <a href="#"><img src="../img/LogoWhatsapp.jpg" alt="whatsapplogo" class="logotipo-footer"></a>
+            <a href="#"><img src="../img/LogoFacebook.png" alt="facebooklogo" class="logotipo-footer"></a>
+            <a href="#"><img src="../img/LogoInstagram.png" alt="instagramlogo" class="logotipo-footer"></a>
+            <a href="#"><img src="../img/LogoWhatsapp.png" alt="whatsapplogo" class="logotipo-footer"></a>
         </div>
         <p class="centrar-texto">Todos los derechos reservados®</p>
     </footer>

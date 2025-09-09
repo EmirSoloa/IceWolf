@@ -10,7 +10,7 @@
 </head>
 <body class="fondo-principal">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="Inicio.html">
                 <img src="../img/Logoicewolf.png" alt="Logo Hielo">
@@ -30,39 +30,70 @@
             </div>
         </div>
     </nav>
-  <main>
-    <section id="contacto-pedido">
-      <h2 class="centrar-texto">Hacenos tu pedido</h2>
-      <p>¿Tenés una duda o querés pedir ahora mismo? Completá el formulario o escribinos por WhatsApp y te respondemos al toque.</p>
+  
+  <main class="container my-5">
+
+    
+    <!-- Formulario de Cotización -->
+    <section id="contacto-cotizacion" class="bg-light p-4 rounded shadow">
+      <h2 class="text-center mb-3">Pedí tu cotización</h2>
+      <p class="text-center">Completá el formulario con los detalles de tu evento y te enviaremos un presupuesto personalizado.</p>
 
       <form action="mailto:icewolfpedidos@gmail.com" method="POST" enctype="text/plain">
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre" required><br><br>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
 
-        <label for="telefono">Teléfono:</label><br>
-        <input type="tel" id="telefono" name="telefono" required><br><br>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" class="form-control" required>
+        </div>
 
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" rows="4" required>Hola! Quiero pedir hielo...</textarea><br><br>
+        <div class="mb-3">
+          <label for="evento" class="form-label">Tipo de evento:</label>
+          <input type="text" id="evento" name="evento" class="form-control" placeholder="Ej: Casamiento, cumpleaños, fiesta" required>
+        </div>
 
-        <button type="submit">Enviar Pedido</button>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha del evento:</label>
+          <input type="date" id="fecha" name="fecha" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="cantidad" class="form-label">Cantidad estimada de bolsas de hielo:</label>
+          <input type="number" id="cantidad" name="cantidad" class="form-control" placeholder="Ej: 20" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje adicional:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" class="form-control" placeholder="Dejanos más detalles de tu pedido..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Solicitar cotización</button>
       </form>
+    </section>
 
-      <p>O si preferís, escribinos directamente:</p>
+    <!-- Pedido directo por WhatsApp -->
+    <section id="pedido-whatsapp" class="text-center mt-5">
+      <h3>¿Querés pedir ya mismo?</h3>
+      <p>Escribinos directo por WhatsApp y te respondemos al toque 👇</p>
       <a href="https://api.whatsapp.com/message/7VAFPQGFK3IXP1?autoload=1&app_absent=0" target="_blank">
-        <button>Hacer pedido por WhatsApp</button>
+        <button class="btn btn-success btn-lg">
+          Hacer pedido por WhatsApp
+        </button>
       </a>
     </section>
   </main>
 
-  <footer>
-    <p class="centrar-texto texto-azul">Nuestras redes:</p>
-    <div class="centrar-texto">
-      <a href="#"><img src="../img/LogoFacebook.jpg" alt="facebooklogo" class="logotipo-footer"></a>
-      <a href="#"><img src="../img/Logoinstagram.jpg" alt="instagramlogo" class="logotipo-footer"></a>
-      <a href="#"><img src="../img/LogoWhatsapp.jpg" alt="whatsapplogo" class="logotipo-footer"></a>
+  <footer class="mt-5 bg-dark text-white p-3">
+    <p class="text-center">Nuestras redes:</p>
+    <div class="text-center">
+      <a href="https://www.facebook.com/profile.php?id=61564450717496"><img src="../img/LogoFacebook.png" alt="facebooklogo" class="logotipo-footer"></a>
+      <a href="https://www.instagram.com/icewolf_3f/"><img src="../img/LogoInstagram.png" alt="instagramlogo" class="logotipo-footer"></a>
+      
     </div>
-    <p class="centrar-texto">Todos los derechos reservados®</p>
+    <p class="text-center">Todos los derechos reservados®</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

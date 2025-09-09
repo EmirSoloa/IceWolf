@@ -12,7 +12,7 @@
 
 <body class="fondo-principal">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="Inicio.html">
                 <img src="../img/Logoicewolf.png" alt="Logo Hielo">
@@ -33,22 +33,70 @@
         </div>
     </nav>
 
-    <main>
-        <h2 class="centrar-texto texto-azul">Nuestros Servicios</h2>
-        <ul>
-            <li>Distribución de hielo en bolsas, barras, picado y escama.</li>
-            <li>carbón vegetal y leña</li>
-            <li>entrega rápida y confiable en todo Tres de Febrero</li>
-        </ul>
-    </main>
+   <main class="container my-5">
+  <h2 class="text-center texto-azul mb-4">Nuestros Servicios</h2>
+  <div class="row g-4">
+    
+    <!-- Servicio Hielo -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="../img/Bolsahielo.png" class="card-img-top" alt="Hielo en bolsas">
+        <div class="card-body">
+          <h5 class="card-title">Hielo en todas sus formas</h5>
+          <p class="card-text">
+            Distribuimos <strong>hielo en bolsas, barras, picado y en escamas</strong>. 
+            Perfecto para eventos, bares, restaurantes y uso personal.
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <footer>
-        
-        <p class="centrar-texto texto-azul">Nuestras redes:</p>
+    <!-- Servicio Carbón y Leña -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="../img/Bolsacarbon.png" class="card-img-top" alt="Carbón y leña">
+        <div class="card-body">
+          <h5 class="card-title">Carbón y Leña</h5>
+          <p class="card-text">
+            Contamos con <strong>carbón vegetal y leña de calidad</strong> para tu asado, parrillada o evento. 
+            Entregas en cantidad mayorista y minorista.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Servicio Delivery -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="../img/Camion.png" class="card-img-top" alt="Entrega de hielo">
+        <div class="card-body">
+          <h5 class="card-title">Entrega rápida</h5>
+          <p class="card-text">
+            Realizamos <strong>delivery inmediato en todo Tres de Febrero</strong>. 
+            Garantizamos puntualidad, calidad y confianza en cada pedido.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="text-center mt-5">
+    <h4>¿Necesitás hielo o carbón ya?</h4>
+    <p>Contactanos ahora mismo y agendamos una visita.</p>
+    <a href="https://api.whatsapp.com/message/7VAFPQGFK3IXP1?autoload=1&app_absent=0" target="_blank" class="btn btn-success btn-lg">
+      Pedir por WhatsApp
+    </a>
+  </div>
+</main>
+
+
+      <footer class="mt-5 bg-dark text-white p-3">
+        <p class="centrar-texto">Nuestras redes:</p>
         <div class="centrar-texto">
-            <a href="https://www.facebook.com/profile.php?id=61564450717496"><img src="../img/LogoFacebook.jpg" alt="facebooklogo" class="logotipo-footer"></a>
-            <a href="https://www.instagram.com/icewolf_3f/"><img src="../img/Logoinstagram.jpg" alt="instagramlogo" class="logotipo-footer"></a>
-            <a href="https://api.whatsapp.com/message/7VAFPQGFK3IXP1?autoload=1&app_absent=0"><img src="../img/LogoWhatsapp.jpg" alt="whatsapplogo" class="logotipo-footer"></a>
+            <a href="#"><img src="../img/LogoFacebook.png" alt="facebooklogo" class="logotipo-footer"></a>
+            <a href="#"><img src="../img/LogoInstagram.png" alt="instagramlogo" class="logotipo-footer"></a>
+            <a href="#"><img src="../img/LogoWhatsapp.png" alt="whatsapplogo" class="logotipo-footer"></a>
         </div>
         <p class="centrar-texto">Todos los derechos reservados®</p>
     </footer>

@@ -6,13 +6,13 @@
 }
 
 .fondo-principal {
-    background-image: url('../img/Fondo2.avif'); /* reemplaza con la ruta correcta de tu fondo */
-    background-size: cover;     /* hace que abarque toda la pantalla */
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;          /* asegura que cubra toda la altura de la ventana */
+  background-color: #1599d6; 
+  background-image: url('../img/Fondo2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 90vh;
 }
-
 
 /* Header */
 .index-header {
@@ -57,13 +57,22 @@
 
 .index-h1 {
   font-size: 7rem;
-  background-color: rgb(13, 43, 141);
+  background-color: rgba(13, 43, 141, 0.322);
   border-radius: 1rem;
+  padding: 15vh;
 }
 
 .parrafo-h1 {
   font-size: 2rem;
 }
+
+.porque-elegirnos {
+  background-color: #f0f8ff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
 
 /*Navbar*/
 
@@ -207,8 +216,10 @@ ul li {
 
 .historia-empresa {
   background-color: #f0f8ff; 
-  padding: 4rem auto;       
+  padding: 2rem;
+  border-radius: 15px;       
   text-align: center;       
+  border-radius: 100vh
 }
 
 .historia-empresa .contenedor {
@@ -317,6 +328,12 @@ ul li {
   max-width: 400px;
 }
 
+.card-img-top {
+  height: 250px;          /* Altura uniforme para todas las imágenes */
+  object-fit: cover;       /* Ajusta la imagen para cubrir el área, recortando si es necesario */
+  width: 100%;             /* Asegura que ocupe todo el ancho de la card */
+}
+
 /* Clientes */
 .clientes-cards {
   background-color: #ffffff;
@@ -362,11 +379,14 @@ footer {
 }
 
 .logotipo-footer {
-  width: 50px;
+  width: 40px;           
   height: auto;
-  margin: 0 10px;
-  object-fit: cover;
+  filter: brightness(0) invert(1); 
+  transition: 0.3s ease;
 }
+
+.logotipo-footer:hover {
+  transform: scale(1.1); }
 
 @media (max-width: 768px) {
   .index-h1 {
