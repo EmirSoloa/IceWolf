@@ -1,8 +1,18 @@
 @charset "UTF-8";
+
 /* Estilos Generales */
 * {
   font-family: "Oswald", sans-serif;
 }
+
+.fondo-principal {
+    background-image: url('../img/Fondo2.avif'); /* reemplaza con la ruta correcta de tu fondo */
+    background-size: cover;     /* hace que abarque toda la pantalla */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;          /* asegura que cubra toda la altura de la ventana */
+}
+
 
 /* Header */
 .index-header {
@@ -14,7 +24,7 @@
   color: #fff;
 }
 
-.header-contenedor-superior {
+.contenedor-superior {
   padding: 1rem 2rem;
   top: 0;
   left: 0;
@@ -23,7 +33,7 @@
   transition: background-color 0.3s ease;
 }
 
-.header-contenedor-inferior {
+.contenedor-inferior {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +64,7 @@
 .parrafo-h1 {
   font-size: 2rem;
 }
+
 /*Navbar*/
 
 ul {
@@ -121,7 +132,7 @@ ul li {
   width: 0;
   height: 2px;
   display: block;
-  background: #ffeb3b; 
+  background: #ffeb3b;
   transition: width 0.3s;
   bottom: -5px;
   left: 0;
@@ -142,6 +153,10 @@ ul li {
   flex-direction: row;
 }
 
+.navbar-brand img {
+  width: 60px;
+  height: auto;
+}
 
 
 /* Main */
@@ -190,7 +205,28 @@ ul li {
   box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
 }
 
-/* Main */
+.historia-empresa {
+  background-color: #f0f8ff; 
+  padding: 4rem auto;       
+  text-align: center;       
+}
+
+.historia-empresa .contenedor {
+  max-width: 800px;        
+  margin: 0 auto;           
+}
+.historia-empresa h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.historia-empresa p {
+  font-size: 1.2rem;
+  line-height: 1.8;         
+  color: #333;              
+}
+
+
 .cards-productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -251,16 +287,41 @@ ul li {
   margin: 1rem;
 }
 
-.empresas-logo1:hover, .empresas-logo:hover {
+.empresas-logo1:hover,
+.empresas-logo:hover {
   transform: scale(1.1);
 }
 
+/*Contacto*/ 
+
+
+#contacto-pedido {
+  text-align: center;       
+  display: flex;            
+  flex-direction: column;   
+  align-items: center;      
+  gap: 1rem;                
+  max-width: 600px;        
+  margin: 0 auto;    }       
+#contacto-pedido form {
+  width: 100%;              
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+#contacto-pedido input, 
+#contacto-pedido textarea,
+#contacto-pedido button {
+  width: 80%;              
+  max-width: 400px;
+}
 
 /* Clientes */
 .clientes-cards {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.399);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -270,7 +331,7 @@ ul li {
   margin: 20px auto;
   max-width: 600px;
   padding: 10px;
-  background-color: #fff;
+  background-color: #a5a4a439;
   border-left: 5px solid rgb(13, 43, 141);
   font-size: 18px;
   color: #333;
@@ -282,7 +343,9 @@ ul li {
   max-width: 150px;
   height: auto;
 }
-.clientes-cards, .producto {
+
+.clientes-cards,
+.producto {
   border-radius: 10px;
   text-align: center;
   background-color: #fff;
@@ -310,23 +373,28 @@ footer {
     font-size: 3rem;
     padding: 1rem;
   }
+
   .parrafo-h1 {
     font-size: 1.2rem;
   }
 }
+
 @media (max-width: 768px) {
   .header-contenedor-inferior {
     width: 90%;
   }
+
   .ul-navbar {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
   }
+
   .ul-navbar li {
     margin: 5px 0;
   }
 }
+
 /* Ajustes extra para móviles chicos */
 @media (max-width: 480px) {
   .index-header {
@@ -334,14 +402,17 @@ footer {
     padding: 4rem 1rem;
   }
 }
-@media (max-width: 480px)  {
+
+@media (max-width: 480px) {
   .index-h1 {
     font-size: 2.2rem;
   }
+
   .parrafo-h1 {
     font-size: 1rem;
   }
 }
+
 @media (max-width: 480px) {
   .logotipo {
     width: 45px;

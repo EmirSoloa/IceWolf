@@ -63,7 +63,7 @@ ul li {
   width: 0;
   height: 2px;
   display: block;
-  background: $ColorAmarillo; 
+  background: $ColorAmarillo;
   transition: width 0.3s;
   bottom: -5px;
   left: 0;
@@ -77,7 +77,12 @@ ul li {
   color: $ColorAmarillo !important;
 }
 
+.navbar-brand img {
+  width: 60px;
+  height: auto;
+}
+
+
 .navbar-container {
   @include flex-center(space-between, center);
 }
-
