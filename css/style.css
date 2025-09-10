@@ -167,22 +167,18 @@ ul li {
   height: auto;
 }
 
-.navbar-toggler-icon {
-  background-image: none !important;
-}
 
 .navbar-toggler-icon {
-  background-image: url("./img/lobo-blanco.png"); /* tu logo */
-  background-size: contain; /* ajusta al tamaño */
+  background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
-  width: 30px;   /* ancho del ícono */
-  height: 30px;  /* alto del ícono */
+  width: 30px;   
+  height: 30px; 
 }
 
 .navbar-toggler {
-  border: none; /* quita el borde si no te gusta */
-  padding: 0.5rem; /* ajusta espacio alrededor */
+  border: none; 
+  padding: 0.5rem; 
 }
 
 
