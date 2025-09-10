@@ -167,6 +167,26 @@ ul li {
   height: auto;
 }
 
+.navbar-toggler-icon {
+  background-image: none !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("./img/lobo-blanco.png"); /* tu logo */
+  background-size: contain; /* ajusta al tamaño */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;   /* ancho del ícono */
+  height: 30px;  /* alto del ícono */
+}
+
+.navbar-toggler {
+  border: none; /* quita el borde si no te gusta */
+  padding: 0.5rem; /* ajusta espacio alrededor */
+}
+
+
+
 
 /* Main */
 .cards-productos {
@@ -329,9 +349,9 @@ ul li {
 }
 
 .card-img-top {
-  height: 250px;          /* Altura uniforme para todas las imágenes */
-  object-fit: cover;       /* Ajusta la imagen para cubrir el área, recortando si es necesario */
-  width: 100%;             /* Asegura que ocupe todo el ancho de la card */
+  height: 250px;          
+  object-fit: cover;      
+  width: 100%;             
 }
 
 /* Clientes */
