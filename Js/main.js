@@ -1,6 +1,6 @@
-// -------------------------------
+
 // SIMULADOR DE PEDIDOS ICE WOLF
-// -------------------------------
+
 
 // Array de productos con precios
 const productos = [
