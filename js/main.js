@@ -1,78 +1,102 @@
-
-// SIMULADOR DE PEDIDOS ICE WOLF
-
+// SIMULADOR DE PEDIDOS ICE WOLF (versión DOM)
 
 // Array de productos con precios
 const productos = [
+  { nombre: "Hielo 2kg", precio: 3000 },
+  { nombre: "Hielo 5kg", precio: 5000 },
   { nombre: "Hielo 15kg", precio: 8000 },
-  { nombre: "Carbón 10kg", precio: 9000 },
+  { nombre: "Hielo Escama 20kg", precio: 9000 },
+  { nombre: "Hielo Barra 25kg", precio: 10000 },
+  { nombre: "Carbón Especial 10kg", precio: 9000 },
+  { nombre: "Carbón Brasita 8kg", precio: 8000 },
+  { nombre: "Carbón Común 8kg", precio: 7000 },
   { nombre: "Leña 10kg", precio: 7500 },
 ];
 
-// Variable para guardar el total
-let total = 0;
+// Cargar pedido desde localStorage o iniciar vacío
+let pedido = JSON.parse(localStorage.getItem("pedido")) || [];
+let total = pedido.reduce((acc, item) => acc + item.subtotal, 0);
 
-// Array para guardar el pedido
-let pedido = [];
+// Referencias al DOM
+const selectProductos = document.getElementById("selectProductos");
+const inputCantidad = document.getElementById("inputCantidad");
+const btnAgregar = document.getElementById("btnAgregar");
+const btnVaciar = document.getElementById("btnVaciar");
+const contenedorCarrito = document.getElementById("carrito");
+const totalHTML = document.getElementById("total");
 
-// Función para mostrar los productos en consola
-function mostrarProductos() {
-  console.log("=== PRODUCTOS DISPONIBLES ===");
+// Cargar productos en el <select>
+function cargarProductosEnPantalla() {
   productos.forEach((p, index) => {
-    console.log(`${index + 1}. ${p.nombre} - $${p.precio}`);
+    const option = document.createElement("option");
+    option.value = index;
+    option.textContent = `${p.nombre} - $${p.precio}`;
+    selectProductos.appendChild(option);
   });
 }
 
-// Función para agregar un producto al pedido
-function agregarProducto() {
-  mostrarProductos();
+// Renderizar carrito en el DOM
+function mostrarCarrito() {
+  contenedorCarrito.innerHTML = "";
 
-  let opcion = parseInt(prompt("Elegí un producto (1, 2 o 3):"));
-  let cantidad = parseInt(prompt("¿Cuántas unidades querés comprar?"));
-
-  // Validación
-  if (opcion >= 1 && opcion <= productos.length && cantidad > 0) {
-    let seleccionado = productos[opcion - 1];
-    let subtotal = seleccionado.precio * cantidad;
-    total += subtotal;
-
-    // Guardar en array de pedido
-    pedido.push({
-      producto: seleccionado.nombre,
-      cantidad: cantidad,
-      subtotal: subtotal,
-    });
-
-    alert(`Agregaste ${cantidad} x ${seleccionado.nombre} al carrito.\nSubtotal: $${subtotal}`);
-  } else {
-    alert("⚠️ Ingreso inválido. Intentá nuevamente.");
+  if (pedido.length === 0) {
+    contenedorCarrito.innerHTML = "<p class='text-muted'>El carrito está vacío.</p>";
   }
-}
 
-// Función para mostrar el resumen final
-function mostrarResumen() {
-  console.log("=== RESUMEN DE TU PEDIDO ===");
-  pedido.forEach(item => {
-    console.log(`${item.cantidad} x ${item.producto} = $${item.subtotal}`);
+  pedido.forEach((item) => {
+    const div = document.createElement("div");
+    div.className = "item-carrito border-bottom py-2";
+    div.innerHTML = `
+      <strong>${item.cantidad} x ${item.producto}</strong>
+      <span class="float-end">$${item.subtotal}</span>
+    `;
+    contenedorCarrito.appendChild(div);
   });
-  console.log(`TOTAL A PAGAR: $${total}`);
-  alert(`Tu total a pagar es de $${total}`);
+
+  totalHTML.textContent = total;
 }
 
-// -------------------------------
-// EJECUCIÓN DEL SIMULADOR
-// -------------------------------
+// Evento para agregar producto
+btnAgregar.addEventListener("click", () => {
+  const indexProducto = parseInt(selectProductos.value);
+  const cantidad = parseInt(inputCantidad.value);
 
-alert("Bienvenido al simulador de pedidos de Ice Wolf 🧊🔥");
+  if (isNaN(indexProducto) || isNaN(cantidad) || cantidad <= 0) {
+    alert("Completá correctamente la cantidad.");
+    return;
+  }
 
-let seguir = true;
+  const seleccionado = productos[indexProducto];
+  const subtotal = seleccionado.precio * cantidad;
 
-while (seguir) {
-  agregarProducto();
-  seguir = confirm("¿Querés agregar otro producto?");
-}
+  const item = {
+    producto: seleccionado.nombre,
+    cantidad,
+    subtotal,
+  };
 
-mostrarResumen();
+  pedido.push(item);
+  total += subtotal;
 
-alert("¡Gracias por tu compra! ❄️");
+  // Guardar en storage
+  localStorage.setItem("pedido", JSON.stringify(pedido));
+
+  // Actualizar DOM
+  mostrarCarrito();
+
+  // Limpiar input
+  inputCantidad.value = "";
+});
+
+// Vaciar carrito
+btnVaciar.addEventListener("click", () => {
+  pedido = [];
+  total = 0;
+  localStorage.removeItem("pedido");
+  mostrarCarrito();
+});
+
+// Inicialización
+cargarProductosEnPantalla();
+mostrarCarrito();
 
