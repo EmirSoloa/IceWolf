@@ -1,0 +1,12 @@
+[
+  { "nombre": "Hielo 2kg", "precio": 3000 },
+  { "nombre": "Hielo 5kg", "precio": 5000 },
+  { "nombre": "Hielo 15kg", "precio": 8000 },
+  { "nombre": "Hielo Escama 20kg", "precio": 9000 },
+  { "nombre": "Hielo Barra 25kg", "precio": 10000 },
+  { "nombre": "Carbón Especial 10kg", "precio": 9000 },
+  { "nombre": "Carbón Brasita 8kg", "precio": 8000 },
+  { "nombre": "Carbón Común 8kg", "precio": 7000 },
+  { "nombre": "Leña 10kg", "precio": 7500 }
+]
+

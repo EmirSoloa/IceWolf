@@ -1,17 +1,6 @@
 // SIMULADOR DE PEDIDOS ICE WOLF (versión DOM)
 
-// Array de productos con precios
-const productos = [
-  { nombre: "Hielo 2kg", precio: 3000 },
-  { nombre: "Hielo 5kg", precio: 5000 },
-  { nombre: "Hielo 15kg", precio: 8000 },
-  { nombre: "Hielo Escama 20kg", precio: 9000 },
-  { nombre: "Hielo Barra 25kg", precio: 10000 },
-  { nombre: "Carbón Especial 10kg", precio: 9000 },
-  { nombre: "Carbón Brasita 8kg", precio: 8000 },
-  { nombre: "Carbón Común 8kg", precio: 7000 },
-  { nombre: "Leña 10kg", precio: 7500 },
-];
+let productos = [];
 
 // Cargar pedido desde localStorage o iniciar vacío
 let pedido = JSON.parse(localStorage.getItem("pedido")) || [];
@@ -24,9 +13,23 @@ const btnAgregar = document.getElementById("btnAgregar");
 const btnVaciar = document.getElementById("btnVaciar");
 const contenedorCarrito = document.getElementById("carrito");
 const totalHTML = document.getElementById("total");
+const btnFinalizar = document.getElementById("btnFinalizar");
+
+async function cargarProductos() {
+  try {
+    const response = await fetch("./data/productos.json");
+    productos = await response.json();
+    cargarProductosEnPantalla();
+  } catch (error) {
+    Swal.fire("Error", "No se pudieron cargar los productos", "error");
+  }
+}
+
 
 // Cargar productos en el <select>
 function cargarProductosEnPantalla() {
+  selectProductos.innerHTML = `<option value="">Seleccionar producto</option>`;
+
   productos.forEach((p, index) => {
     const option = document.createElement("option");
     option.value = index;
@@ -34,6 +37,7 @@ function cargarProductosEnPantalla() {
     selectProductos.appendChild(option);
   });
 }
+
 
 // Renderizar carrito en el DOM
 function mostrarCarrito() {
@@ -62,7 +66,12 @@ btnAgregar.addEventListener("click", () => {
   const cantidad = parseInt(inputCantidad.value);
 
   if (isNaN(indexProducto) || isNaN(cantidad) || cantidad <= 0) {
-    alert("Completá correctamente la cantidad.");
+    Swal.fire({
+  icon: "error",
+  title: "Datos inválidos",
+  text: "Ingresá una cantidad válida"
+});
+;
     return;
   }
 
@@ -77,6 +86,7 @@ btnAgregar.addEventListener("click", () => {
 
   pedido.push(item);
   total += subtotal;
+
 
   // Guardar en storage
   localStorage.setItem("pedido", JSON.stringify(pedido));
@@ -95,8 +105,40 @@ btnVaciar.addEventListener("click", () => {
   localStorage.removeItem("pedido");
   mostrarCarrito();
 });
+btnFinalizar.addEventListener("click", () => {
+  if (pedido.length === 0) {
+    Swal.fire({
+      icon: "info",
+      title: "Carrito vacío",
+      text: "Agregá productos para continuar"
+    });
+    return;
+  }
+
+  Swal.fire({
+    title: "¿Confirmar pedido?",
+    text: `Total a pagar: $${total}`,
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonText: "Confirmar",
+    cancelButtonText: "Cancelar"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        icon: "success",
+        title: "Pedido confirmado",
+        text: "Gracias por tu compra"
+      });
+
+      pedido = [];
+      total = 0;
+      localStorage.removeItem("pedido");
+      mostrarCarrito();
+    }
+  });
+});
+
 
 // Inicialización
-cargarProductosEnPantalla();
+cargarProductos();
 mostrarCarrito();
-
